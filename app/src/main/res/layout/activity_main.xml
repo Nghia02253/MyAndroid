@@ -1,54 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="5dp"
+    android:weightSum="10"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_body">
 
-    <TextView
-        android:text="Loại biến nào có thể dùng cho tên một thành phố?"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id="@+id/int_id"
-        android:text="int"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/double_id"
-        android:text="double"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/string_id"
-        android:text="String"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <CheckBox
-        android:id="@+id/all"
-        android:text="Tất cả các phương án"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/test"
-        android:text="Kết quả"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/hint"
-        android:text="Gợi ý"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switch_id"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch" />
+        android:layout_weight="2">
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo_ecabinet" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="10dp"
+        android:layout_gravity="clip_horizontal"
+        android:paddingRight="30dp"
+        android:layout_weight="7">
+
+        <EditText
+            android:id="@+id/userText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/ic_input_user"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Tài khoản"
+            android:inputType="textPersonName"
+            android:paddingBottom="10dp"
+            android:textColorHint="#fff"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/passText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/ic_input_pass"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Mật khẩu"
+            android:inputType="textPassword"
+            android:paddingBottom="15dp"
+            android:textColorHint="#fff"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:text="Đăng nhập"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_orange"
+            android:textColor="#fff"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textSize="15dp"
+            android:onClick="onClickLogin"/>
+        <TextView
+            android:text="Quên mật khẩu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="15dp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+
     <TextView
-        android:id="@+id/textview_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:text="Bạn chưa có tài khoản? Đăng ký"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="15dp" android:gravity="bottom"
+        android:paddingBottom="10dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

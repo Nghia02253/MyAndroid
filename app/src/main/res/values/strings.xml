@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Android</string>
+    <string name="app_name">TD eCabinet</string>
+    <string name="title_listuser_list">List user</string>
+    <string name="title_listuser_detail">List User Detail</string>
 </resources>

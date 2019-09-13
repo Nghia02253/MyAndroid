@@ -9,6 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ListUserActivity"></activity>
+        <activity
+            android:name=".ListUserListActivity"
+            android:label="@string/title_listuser_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ListUserDetailActivity"
+            android:label="@string/title_listuser_detail"
+            android:parentActivityName=".ListUserListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.nghia02253.myandroid.ListUserListActivity" />
+        </activity>
+        <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
