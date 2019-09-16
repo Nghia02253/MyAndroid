@@ -3,18 +3,21 @@ package com.nghia02253.myandroid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
     CheckBox int_id, double_id, string_id, all;
     Button test, hint, btnListUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +26,24 @@ public class HomeActivity extends AppCompatActivity {
 
         init();
 
-    }
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Trang chủ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
     //Listener nhận sự kiện khi các Checkbox thay đổi trạng thái
     CompoundButton.OnCheckedChangeListener m_listener
             = new CompoundButton.OnCheckedChangeListener() {
