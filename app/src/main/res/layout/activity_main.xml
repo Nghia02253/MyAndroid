@@ -72,6 +72,14 @@
             android:textColorHint="#fff"
             android:textColor="#fff"
             android:textSize="16dp" />
+        <CheckBox
+            android:id="@+id/cbRemember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:layout_marginLeft="25dp"
+            android:buttonTint="#fff"
+            android:text="Ghi nhớ đăng nhập" />
 
         <Button
             android:id="@+id/btnLogin"
@@ -87,13 +95,15 @@
             android:textSize="15dp"
             android:onClick="onClickLogin"/>
         <TextView
+            android:id="@+id/tvResetPass"
             android:text="Quên mật khẩu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="#fff"
             android:textSize="15dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:clickable="true"/>
 
     </LinearLayout>
 

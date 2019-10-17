@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListView
-        android:id="@+id/listproduct"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
 
-    </ListView>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/delete"
+    <TextView
+        android:background="#2380E4"
+        android:textColor="#fff"
+        android:id="@+id/textViewTime"
+        android:layout_toRightOf="@id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Xoá sản phẩm đầu tiên" />
-</LinearLayout>
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewStatus"
+        android:layout_alignParentRight="true"
+        android:textColor="#67A224"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_below="@id/textViewTime"
+        android:textStyle="bold"
+        android:textColor="#2380E4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewDesc"
+        android:layout_below="@id/textViewTitle"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+</RelativeLayout>

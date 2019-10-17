@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="5dp"
     android:layout_width="match_parent"
@@ -63,5 +65,37 @@
         android:paddingRight="30dp"
         android:textSize="15dp"
         android:onClick="onClickListUsers"/>
+    <TextView
+        android:id="@+id/tvUrlGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tìm kiếm với google"/>
+    <TextView
+        android:id="@+id/tvSMS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi SMS"/>
+    <TextView
+        android:id="@+id/tvCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Call to 0987654321"/>
+    <TextView
+        android:id="@+id/tvLoadImageInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load hình từ internet"/>
+    <Button
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera"/>
+
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
 
 </LinearLayout>

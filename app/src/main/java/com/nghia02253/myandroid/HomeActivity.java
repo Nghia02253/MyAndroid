@@ -1,22 +1,36 @@
 package com.nghia02253.myandroid;
 
-import android.app.Activity;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class HomeActivity extends AppCompatActivity {
 
+    int REQUEST_CODE_CAMERA = 123;
     CheckBox int_id, double_id, string_id, all;
-    Button test, hint, btnListUser;
+    Button test, hint, btnListUser, btnCamera;
+    TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage;
+    ImageView imageViewProfile;
 
 
     @Override
@@ -26,11 +40,86 @@ public class HomeActivity extends AppCompatActivity {
 
         init();
 
+        final Animation animAlpha = AnimationUtils.loadAnimation(this, R.anim.anim_alpha);
+        final Animation animRotate = AnimationUtils.loadAnimation(this, R.anim.anim_rotate);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Trang chủ");
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
+        tvUrlGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://dichvucong.thanhhoa.gov.vn"));
+                startActivity(intent);
+            }
+        });
+
+        tvSMS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SENDTO);
+                intent.putExtra("sms_body", "");
+                intent.setData(Uri.parse("sms:0984688886"));
+                startActivity(intent);
+            }
+        });
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnListUser.startAnimation(animAlpha);
+                btnCamera.startAnimation(animRotate);
+                //Kiem tra cap quyen Camera khi su dung
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.CAMERA}, REQUEST_CODE_CAMERA);
+            }
+        });
+        tvLoadImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadImageInternet.class));
+            }
+        });
+        /*
+        tvCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:0987654321"));
+                startActivity(intent);
+            }
+        });
+        */
+
     }
+
+    //Kiem tra ket qua nguoi dung cap quyen cho camera
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        if( requestCode == REQUEST_CODE_CAMERA && grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, REQUEST_CODE_CAMERA);
+        } else {
+            Toast.makeText(this, "Bạn cần cấp quyền sử dụng camera cho ứng dụng", Toast.LENGTH_SHORT).show();
+        }
+
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if(requestCode == REQUEST_CODE_CAMERA && resultCode == RESULT_OK && data != null) {
+            Bitmap imageView = (Bitmap) data.getExtras().get("data");
+            imageViewProfile.setImageBitmap(imageView);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
@@ -96,6 +185,12 @@ public class HomeActivity extends AppCompatActivity {
         string_id = findViewById(R.id.string_id);
         all       = findViewById(R.id.all);
         btnListUser = findViewById(R.id.btnListUser);
+        tvUrlGoogle = findViewById(R.id.tvUrlGoogle);
+        tvSMS = findViewById(R.id.tvSMS);
+        tvCall = findViewById(R.id.tvCall);
+        tvLoadImage = findViewById(R.id.tvLoadImageInternet);
+        btnCamera = findViewById(R.id.btnCamera);
+        imageViewProfile = findViewById(R.id.imageViewProfile);
         attachListener();
 
 

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.nghia02253.myandroid">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListUserActivity"></activity>
+        <activity
+            android:name=".LoadImageInternet"
+            android:label="@string/title_activity_load_image_internet"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ListUser" />
         <activity
             android:name=".ListUserListActivity"
             android:label="@string/title_listuser_list"
@@ -23,6 +30,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.nghia02253.myandroid.ListUserListActivity" />
         </activity>
+        <activity android:name=".ListUserActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -31,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ResetPass" />
     </application>
 
 </manifest>

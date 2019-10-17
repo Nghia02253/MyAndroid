@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TD eCabinet</string>
+    <string name="textViewEmail" translatable="false">Email</string>
+    <string name="textViewPass">Mật khẩu</string>
+    <string name="textViewPhoneNumber">Số điện thoại</string>
+    <string name="textViewTitle">Thông tin tài khoản</string>
+    <string name="title_listuser_detail">List User Detail</string>
+    <string name="title_listuser_list">List user</string>
+</resources>
