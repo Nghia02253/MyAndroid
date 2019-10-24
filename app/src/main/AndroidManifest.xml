@@ -13,10 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VolleyObjectActivity" android:label="Volley Object"></activity>
+        <activity android:name=".MediaAudioActivity"></activity>
+        <activity
+            android:name=".VolleyObjectActivity"
+            android:label="Volley Object" />
         <activity
             android:name=".VolleyStringActivity"
-            android:label="Volley String"></activity>
+            android:label="Volley String" />
         <activity
             android:name=".LoadJSONArrayObjectActivity"
             android:label="Load JSON Array Object" />

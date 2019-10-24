@@ -31,7 +31,8 @@ public class HomeActivity extends AppCompatActivity {
     CheckBox int_id, double_id, string_id, all;
     Button test, hint, btnListUser, btnCamera;
     TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
-            tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject;
+            tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject,
+            tvMediaPlay;
     ImageView imageViewProfile;
 
 
@@ -125,6 +126,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, VolleyObjectActivity.class));
+            }
+        });
+        tvMediaPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, MediaAudioActivity.class));
             }
         });
         /*
@@ -246,6 +253,7 @@ public class HomeActivity extends AppCompatActivity {
         tvLoadJSONArrayObject = findViewById(R.id.tvLoadJSONArrayObject);
         tvVolleyString = findViewById(R.id.tvVolleyString);
         tvVolleyObject = findViewById(R.id.tvVolleyObject);
+        tvMediaPlay = findViewById(R.id.tvMediaPlay);
         btnCamera = findViewById(R.id.btnCamera);
         imageViewProfile = findViewById(R.id.imageViewProfile);
         attachListener();
