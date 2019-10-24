@@ -3,7 +3,8 @@
     package="com.nghia02253.myandroid">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,10 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VolleyObjectActivity" android:label="Volley Object"></activity>
+        <activity
+            android:name=".VolleyStringActivity"
+            android:label="Volley String"></activity>
+        <activity
+            android:name=".LoadJSONArrayObjectActivity"
+            android:label="Load JSON Array Object" />
+        <activity android:name=".LoadJSONLanguageActivity" />
+        <activity
+            android:name=".LoadJSONActivity"
+            android:label="Load JSON" />
         <activity
             android:name=".LoadImageInternet"
             android:label="@string/title_activity_load_image_internet"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListUser" />
         <activity
             android:name=".ListUserListActivity"
@@ -40,6 +52,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ResetPass" />
+        <activity android:name=".LoadContentActivity" />
+        <activity
+            android:name=".LoadRssActivity"
+            android:label="Danh sách tin RSS" />
+        <activity
+            android:name=".LoadRssDetailActivity"
+            android:label="Chi tiết tin" />
     </application>
 
 </manifest>

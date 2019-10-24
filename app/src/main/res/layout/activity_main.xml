@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#fff"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="23dp"
             android:buttonTint="#fff"
             android:text="Ghi nhớ đăng nhập" />
 

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
@@ -29,7 +30,8 @@ public class HomeActivity extends AppCompatActivity {
     int REQUEST_CODE_CAMERA = 123;
     CheckBox int_id, double_id, string_id, all;
     Button test, hint, btnListUser, btnCamera;
-    TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage;
+    TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
+            tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject;
     ImageView imageViewProfile;
 
 
@@ -83,6 +85,48 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, LoadImageInternet.class));
             }
         });
+        tvLoadContentInternet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadContentActivity.class));
+            }
+        });
+        tvLoadContentRSS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadRssActivity.class));
+            }
+        });
+        tvLoadJSON.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadJSONActivity.class));
+            }
+        });
+        tvLoadJSONLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadJSONLanguageActivity.class));
+            }
+        });
+        tvLoadJSONArrayObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, LoadJSONArrayObjectActivity.class));
+            }
+        });
+        tvVolleyString.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, VolleyStringActivity.class));
+            }
+        });
+        tvVolleyObject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, VolleyObjectActivity.class));
+            }
+        });
         /*
         tvCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +150,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivityForResult(intent, REQUEST_CODE_CAMERA);
         } else {
             Toast.makeText(this, "Bạn cần cấp quyền sử dụng camera cho ứng dụng", Toast.LENGTH_SHORT).show();
+            //Redirect tới cấu hình cấp quyền CAMERA
+            Intent intent = new Intent();
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", getPackageName(), null);
+            intent.setData(uri);
+            startActivity(intent);
         }
 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -189,6 +239,13 @@ public class HomeActivity extends AppCompatActivity {
         tvSMS = findViewById(R.id.tvSMS);
         tvCall = findViewById(R.id.tvCall);
         tvLoadImage = findViewById(R.id.tvLoadImageInternet);
+        tvLoadContentInternet = findViewById(R.id.tvLoadContentInternet);
+        tvLoadContentRSS = findViewById(R.id.tvLoadContentRSS);
+        tvLoadJSON = findViewById(R.id.tvLoadJSON);
+        tvLoadJSONLanguage = findViewById(R.id.tvLoadJSONLanguage);
+        tvLoadJSONArrayObject = findViewById(R.id.tvLoadJSONArrayObject);
+        tvVolleyString = findViewById(R.id.tvVolleyString);
+        tvVolleyObject = findViewById(R.id.tvVolleyObject);
         btnCamera = findViewById(R.id.btnCamera);
         imageViewProfile = findViewById(R.id.imageViewProfile);
         attachListener();
