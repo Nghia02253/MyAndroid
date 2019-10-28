@@ -6,17 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".MediaAudioActivity">
 
+
     <Button
-        android:id="@+id/btnPlayMedia"
+        android:id="@+id/btnPlayOnline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Play Media"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        android:layout_marginStart="16dp"
+        android:text="Play Online"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPlayVideoOnline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:text="Play Video Online"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnPlayMediaVideo"
@@ -25,21 +33,22 @@
         android:text="Play Media Video"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <VideoView
         android:id="@+id/vdPlayMedia"
-        android:layout_width="382dp"
-        android:layout_height="241dp"
+        android:layout_width="384dp"
+        android:layout_height="235dp"
+        android:layout_marginBottom="368dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlayMedia"
-        app:layout_constraintVertical_bias="0.336" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvNameMedia"
@@ -49,7 +58,7 @@
         android:text="Tên bài hát"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vdPlayMedia"
-        app:layout_constraintVertical_bias="0.285"
+        app:layout_constraintVertical_bias="0.241"
         tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
@@ -61,10 +70,10 @@
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNameMedia"
-        app:layout_constraintVertical_bias="0.194">
+        app:layout_constraintVertical_bias="0.077">
 
         <TextView
             android:id="@+id/tvTimePlayMedia"
@@ -88,8 +97,49 @@
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="0.216"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sbPlayAudio"
+        app:layout_constraintVertical_bias="0.138">
+
+        <Button
+            android:id="@+id/btnPrevAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Prev" />
+
+        <Button
+            android:id="@+id/btnPlayAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Play" />
+
+        <Button
+            android:id="@+id/btnStopAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Stop" />
+
+        <Button
+            android:id="@+id/btnNextAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Next" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
