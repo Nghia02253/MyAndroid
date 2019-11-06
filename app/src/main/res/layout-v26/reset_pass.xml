@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewTitle" />
+
+    <EditText
+        android:id="@+id/textViewEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/textViewEmail"
+        android:inputType="textEmailAddress"
+        android:text="@string/textViewEmail"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/textViewPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/textViewPhoneNumber"
+        android:inputType="phone"
+        android:text="@string/textViewPhoneNumber"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/textViewPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/textViewPass"
+        android:inputType="textPassword"
+        android:text="@string/textViewPass"
+        android:importantForAutofill="no" />
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Chọn ngày" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Chọn giờ" />
+    <Button
+        android:id="@+id/btnPopupMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Popup Menu" />
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data"/>
+    <TextView
+        android:id="@+id/tvObjectData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="object Data"/>
+
+</LinearLayout>

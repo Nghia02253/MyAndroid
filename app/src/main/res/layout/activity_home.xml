@@ -133,6 +133,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Media play"/>
+            <TextView
+                android:id="@+id/tvSQLite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SQLite Database"/>
             <Button
                 android:id="@+id/btnCamera"
                 android:layout_width="wrap_content"

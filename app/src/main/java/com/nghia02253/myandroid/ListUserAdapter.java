@@ -7,18 +7,20 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class ListUserAdapter extends BaseAdapter {
 
-    private Context context;
+    private ListUserActivity context;
     private int layout;
     private List<ListUser> listUser;
 
-    public ListUserAdapter(Context context, int layout, List<ListUser> listUser) {
+    public ListUserAdapter(ListUserActivity context, int layout, List<ListUser> listUser) {
         this.context = context;
         this.layout = layout;
         this.listUser = listUser;
@@ -42,6 +44,7 @@ public class ListUserAdapter extends BaseAdapter {
     private class ViewHolder {
         ImageView imgImage;
         TextView tvTime, tvStatus, tvTitle, tvDesc;
+        Button btnEditUser, btnDeleteUser;
     }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
@@ -58,19 +61,30 @@ public class ListUserAdapter extends BaseAdapter {
             viewHolder.tvTitle = (TextView) view.findViewById(R.id.textViewTitle);
             viewHolder.tvDesc = (TextView) view.findViewById(R.id.textViewDesc);
 
+            viewHolder.btnEditUser = (Button) view.findViewById(R.id.btnEditUser);
+            viewHolder.btnDeleteUser = (Button) view.findViewById(R.id.btnDeleteUser);
+
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        ListUser listUserItem = listUser.get(i);
+        final ListUser listUserItem = listUser.get(i);
+
         viewHolder.imgImage.setImageResource(listUserItem.getIvImage());
         viewHolder.tvTime.setText(listUserItem.getTvTime());
         viewHolder.tvStatus.setText(listUserItem.getTvStatus());
-
         viewHolder.tvTitle.setText(listUserItem.getTvTitle());
         viewHolder.tvDesc.setText(listUserItem.getTvDesc());
 
+        //bắt sự kiện sửa xóa
+        viewHolder.btnEditUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Toast.makeText(context, "" + listUserItem.getTvStatus(), Toast.LENGTH_LONG).show();
+                context.DialogEditUser(listUserItem.getTvStatus(), listUserItem.getTvTitle(), listUserItem.getTvDesc(), listUserItem.getId());
+            }
+        });
         // add animation
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_scale);
         view.startAnimation(animation);

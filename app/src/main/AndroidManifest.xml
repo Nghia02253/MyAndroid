@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MediaAudioActivity"></activity>
+        <activity android:name=".DatabaseActivity" android:label="SQlite Database"></activity>
+        <activity android:name=".MediaAudioActivity" />
         <activity
             android:name=".VolleyObjectActivity"
             android:label="Volley Object" />
@@ -33,19 +34,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListUser" />
         <activity
-            android:name=".ListUserListActivity"
-            android:label="@string/title_listuser_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ListUserDetailActivity"
-            android:label="@string/title_listuser_detail"
-            android:parentActivityName=".ListUserListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.nghia02253.myandroid.ListUserListActivity" />
-        </activity>
-        <activity android:name=".ListUserActivity" />
+            android:name=".ListUserActivity"
+            android:label="Danh sách công việc"/>
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

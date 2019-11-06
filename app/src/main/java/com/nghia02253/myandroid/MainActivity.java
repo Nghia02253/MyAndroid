@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
                 String[] arrayData = {"Data 1", "Data 2", "Data 3"};
                 intent.putExtra("arrayData", arrayData);
                 //Object
-                ListUser listUser = new ListUser("15/10/2019", "Đang diễn ra", "Kỳ họp khóa VI", "Đang cập nhật nội dung...", R.drawable.logo);
+                ListUser listUser = new ListUser("15/10/2019", "Đang diễn ra", "Kỳ họp khóa VI", "Đang cập nhật nội dung...", R.drawable.logo, 1);
                 //Bundle
                 Bundle bundle = new Bundle();
                 bundle.putStringArray("arrayData", arrayData);
