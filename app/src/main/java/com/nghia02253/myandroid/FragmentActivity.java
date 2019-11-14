@@ -11,25 +11,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 public class FragmentActivity extends AppCompatActivity {
-//    Button btnFragmentA, btnFragmentB;
-//    FrameLayout frame_fragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_activity);
-//        btnFragmentA = findViewById(R.id.btnFragmentA);
-//        btnFragmentB = findViewById(R.id.btnFragmentB);
-//        frame_fragment = findViewById(R.id.frame_fragment);
     }
 
     public void LoadFragment(View view){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Fragment fragment = null;
-//        FragmentManager fragmentManager = getFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        Fragment fragment = null;
 
         switch (view.getId()) {
             case R.id.btnFragmentA:
