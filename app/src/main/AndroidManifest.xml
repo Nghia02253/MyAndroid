@@ -52,6 +52,9 @@
         <activity
             android:name=".LoadRssDetailActivity"
             android:label="Chi tiết tin" />
+        <activity
+            android:name=".FragmentActivity"
+            android:label="Fragment"/>
     </application>
 
 </manifest>
