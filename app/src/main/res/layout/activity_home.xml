@@ -134,6 +134,11 @@
                 android:layout_height="wrap_content"
                 android:text="Media play"/>
             <TextView
+                android:id="@+id/tvFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fragment"/>
+            <TextView
                 android:id="@+id/tvSQLite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

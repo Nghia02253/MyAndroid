@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     Button test, hint, btnListUser, btnCamera;
     TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
             tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject,
-            tvMediaPlay, tvSQLite;
+            tvMediaPlay, tvSQLite, tvFragment;
     ImageView imageViewProfile;
 
 
@@ -138,6 +138,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, DatabaseActivity.class));
+            }
+        });
+        tvFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, FragmentActivity.class));
             }
         });
         /*
@@ -261,6 +267,7 @@ public class HomeActivity extends AppCompatActivity {
         tvVolleyObject = findViewById(R.id.tvVolleyObject);
         tvMediaPlay = findViewById(R.id.tvMediaPlay);
         tvSQLite = findViewById(R.id.tvSQLite);
+        tvFragment = findViewById(R.id.tvFragment);
         btnCamera = findViewById(R.id.btnCamera);
         imageViewProfile = findViewById(R.id.imageViewProfile);
         attachListener();
