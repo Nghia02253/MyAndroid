@@ -13,7 +13,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class FragmentActivity extends AppCompatActivity implements DeleteDataInterface{
 
-    boolean delete;
     FragmentManager fragmentManager = getSupportFragmentManager();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -32,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     Button test, hint, btnListUser, btnCamera;
     TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
             tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject,
-            tvMediaPlay, tvSQLite, tvFragment;
+            tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon;
     ImageView imageViewProfile;
 
 
@@ -146,6 +146,13 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, FragmentActivity.class));
             }
         });
+        tvFragmentRespon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, FragmentResponActivity.class));
+            }
+        });
+
         /*
         tvCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,27 +256,28 @@ public class HomeActivity extends AppCompatActivity {
 
 
     void init() {
-        int_id    = findViewById(R.id.int_id);
-        double_id = findViewById(R.id.double_id);
-        string_id = findViewById(R.id.string_id);
-        all       = findViewById(R.id.all);
-        btnListUser = findViewById(R.id.btnListUser);
-        tvUrlGoogle = findViewById(R.id.tvUrlGoogle);
-        tvSMS = findViewById(R.id.tvSMS);
-        tvCall = findViewById(R.id.tvCall);
-        tvLoadImage = findViewById(R.id.tvLoadImageInternet);
-        tvLoadContentInternet = findViewById(R.id.tvLoadContentInternet);
-        tvLoadContentRSS = findViewById(R.id.tvLoadContentRSS);
-        tvLoadJSON = findViewById(R.id.tvLoadJSON);
-        tvLoadJSONLanguage = findViewById(R.id.tvLoadJSONLanguage);
-        tvLoadJSONArrayObject = findViewById(R.id.tvLoadJSONArrayObject);
-        tvVolleyString = findViewById(R.id.tvVolleyString);
-        tvVolleyObject = findViewById(R.id.tvVolleyObject);
-        tvMediaPlay = findViewById(R.id.tvMediaPlay);
-        tvSQLite = findViewById(R.id.tvSQLite);
-        tvFragment = findViewById(R.id.tvFragment);
-        btnCamera = findViewById(R.id.btnCamera);
-        imageViewProfile = findViewById(R.id.imageViewProfile);
+        int_id                  = findViewById(R.id.int_id);
+        double_id               = findViewById(R.id.double_id);
+        string_id               = findViewById(R.id.string_id);
+        all                     = findViewById(R.id.all);
+        btnListUser             = findViewById(R.id.btnListUser);
+        tvUrlGoogle             = findViewById(R.id.tvUrlGoogle);
+        tvSMS                   = findViewById(R.id.tvSMS);
+        tvCall                  = findViewById(R.id.tvCall);
+        tvLoadImage             = findViewById(R.id.tvLoadImageInternet);
+        tvLoadContentInternet   = findViewById(R.id.tvLoadContentInternet);
+        tvLoadContentRSS        = findViewById(R.id.tvLoadContentRSS);
+        tvLoadJSON              = findViewById(R.id.tvLoadJSON);
+        tvLoadJSONLanguage      = findViewById(R.id.tvLoadJSONLanguage);
+        tvLoadJSONArrayObject   = findViewById(R.id.tvLoadJSONArrayObject);
+        tvVolleyString          = findViewById(R.id.tvVolleyString);
+        tvVolleyObject          = findViewById(R.id.tvVolleyObject);
+        tvMediaPlay             = findViewById(R.id.tvMediaPlay);
+        tvSQLite                = findViewById(R.id.tvSQLite);
+        tvFragment              = findViewById(R.id.tvFragment);
+        tvFragmentRespon        = findViewById(R.id.tvFragmentRespon);
+        btnCamera               = findViewById(R.id.btnCamera);
+        imageViewProfile        = findViewById(R.id.imageViewProfile);
         attachListener();
 
 

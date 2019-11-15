@@ -55,6 +55,9 @@
         <activity
             android:name=".FragmentActivity"
             android:label="Fragment"/>
+        <activity
+            android:name=".FragmentResponActivity"
+            android:label="Fragment Giao diện"/>
     </application>
 
 </manifest>
