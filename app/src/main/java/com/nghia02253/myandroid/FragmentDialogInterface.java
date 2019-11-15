@@ -15,7 +15,9 @@ public class FragmentDialogInterface extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
         deleteDataInterface = (DeleteDataInterface) getActivity();
+
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
         dialog.setTitle("Xác nhận");
         dialog.setMessage("Bạn có muốn xóa sản phẩm này?");
