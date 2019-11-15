@@ -26,6 +26,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fragment B"/>
+        <Button
+            android:id="@+id/btnListFragment"
+            android:onClick="LoadFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="List Fragment"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10px">
+    <Button
+        android:id="@+id/btnBack"
+        android:onClick="BackFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"/>
+    <Button
+        android:id="@+id/btnDialogXacNhan"
+        android:onClick="DialogFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa"/>
+    <Button
+        android:id="@+id/btnDialogInterface"
+        android:onClick="DialogFragmentInterface"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa qua Interface"/>
     </LinearLayout>
 
     <FrameLayout
