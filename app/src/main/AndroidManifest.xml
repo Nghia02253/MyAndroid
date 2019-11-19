@@ -58,6 +58,9 @@
         <activity
             android:name=".FragmentResponActivity"
             android:label="Fragment Giao diện"/>
+        <activity
+            android:name=".FragmentKyhopList"
+            android:label="Fragment kỳ họp"/>
     </application>
 
 </manifest>

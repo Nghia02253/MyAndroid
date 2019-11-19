@@ -6,11 +6,11 @@
 
 
     <fragment
-        android:id="@+id/fragment"
-        android:name="com.nghia02253.myandroid.FragmentList"
+        android:id="@+id/fragment4"
+        android:name="com.nghia02253.myandroid.FragmentKyhopList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="3"/>
+        android:layout_weight="3" />
 
     <fragment
         android:id="@+id/fragment3"
