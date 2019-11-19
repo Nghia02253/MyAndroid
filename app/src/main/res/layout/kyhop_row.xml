@@ -1,56 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:layout_marginTop="10dp"
-    android:background="#fff"
-    android:padding="5dp"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="28dp"
-        android:layout_height="22dp"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/textViewTime"
-        android:layout_width="187dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewTitle"
-        android:layout_marginLeft="-21dp"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@id/imageView"
-        android:text="Thời gian"
-        android:textColor="#B6B6B6" />
-
-    <TextView
-        android:id="@+id/textViewStatus"
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewTitle"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="188dp"
-        android:layout_toEndOf="@+id/textViewTime"
-        android:text="Trạng thái"
-        android:textColor="#67A224" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:padding="5dp"
+    android:background="#fff" android:layout_marginTop="5dp">
 
     <TextView
         android:id="@+id/textViewTitle"
-        android:layout_width="326dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="19dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="11dp"
-        android:layout_toRightOf="@id/imageView"
         android:text="Tiêu đề"
+        android:layout_marginBottom="5dp"
         android:textColor="#2380E4"
         android:textStyle="bold" />
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thời gian"
+            android:textColor="#926F6F" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - "
+            android:textColor="#DDDDDD" />
+        <TextView
+            android:id="@+id/textViewStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:textColor="#67A224" />
+    </LinearLayout>
+
+
+</LinearLayout>

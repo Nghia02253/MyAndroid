@@ -5,17 +5,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.fragment.app.ListFragment;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class FragmentKyhopList extends ListFragment {
     ArrayList<KyHop> arrayList;
     KyhopAdapter adapter;
     Database database;
+    DataKyhopInterface dataKyhopInterface;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        dataKyhopInterface = (DataKyhopInterface) getActivity();
 
         arrayList = new ArrayList<>();
         adapter = new KyhopAdapter(getActivity(), R.layout.kyhop_row, arrayList);
@@ -31,16 +37,31 @@ public class FragmentKyhopList extends ListFragment {
     private void GetDataKyhop(){
         Cursor dataKyhop = database.GetData("SELECT * FROM ListUser ORDER BY CreatedDate DESC");
         arrayList.clear();
-        while (dataKyhop.moveToNext()){
-            int idUser = dataKyhop.getInt(0);
-            String Time = dataKyhop.getString(1);
-            String Status = dataKyhop.getString(2);
-            String Title = dataKyhop.getString(3);
-            String Desc = dataKyhop.getString(4);
+        if(dataKyhop != null) {
+            while (dataKyhop.moveToNext()) {
+                int idUser = dataKyhop.getInt(0);
+                String Time = dataKyhop.getString(1);
+                String Status = dataKyhop.getString(2);
+                String Title = dataKyhop.getString(3);
+                String Desc = dataKyhop.getString(4);
 
-            arrayList.add(new KyHop(Time, Status, Title, Desc, R.drawable.logo, idUser));
+                arrayList.add(new KyHop(Time, Status, Title, Desc, R.drawable.logo, idUser));
+            }
+            adapter.notifyDataSetChanged();
         }
-        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        dataKyhopInterface.GetDataKH(
+                arrayList.get(position).getTvTitle(),
+                arrayList.get(position).getTvTime(),
+                arrayList.get(position).getTvStatus(),
+                arrayList.get(position).getTvDesc(),
+                arrayList.get(position).getId()
+                );
+        Toast.makeText(getActivity(), arrayList.get(position).getTvTitle(), Toast.LENGTH_LONG).show();
+        super.onListItemClick(l, v, position, id);
     }
 
 }
