@@ -53,15 +53,8 @@ public class FragmentKyhopList extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        dataKyhopInterface.GetDataKH(
-                arrayList.get(position).getTvTitle(),
-                arrayList.get(position).getTvTime(),
-                arrayList.get(position).getTvStatus(),
-                arrayList.get(position).getTvDesc(),
-                arrayList.get(position).getId()
-                );
-        Toast.makeText(getActivity(), arrayList.get(position).getTvTitle(), Toast.LENGTH_LONG).show();
         super.onListItemClick(l, v, position, id);
+        dataKyhopInterface.GetDataKH(arrayList.get(position));
     }
 
 }

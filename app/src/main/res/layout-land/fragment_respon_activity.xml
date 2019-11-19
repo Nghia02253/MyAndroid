@@ -6,14 +6,14 @@
 
 
     <fragment
-        android:id="@+id/fragment4"
+        android:id="@+id/fragmentKyhopList"
         android:name="com.nghia02253.myandroid.FragmentKyhopList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="3" />
 
     <fragment
-        android:id="@+id/fragment3"
+        android:id="@+id/fragmentKyhopDetail"
         android:name="com.nghia02253.myandroid.FragmentResponDetail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

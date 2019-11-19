@@ -13,7 +13,8 @@ public class FragmentResponActivity extends AppCompatActivity implements DataKyh
     }
 
     @Override
-    public void GetDataKH(String Title, String Time, String Status, String Desc, Integer IdUser) {
-
+    public void GetDataKH(KyHop kyHop) {
+        FragmentResponDetail fragmentResponDetail = (FragmentResponDetail) getSupportFragmentManager().findFragmentById(R.id.fragmentKyhopDetail);
+        fragmentResponDetail.setDataKyhop(kyHop);
     }
 }
