@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
         String pass = textPass.getText().toString();
 
         if( user.equals(userText) && pass.equals(passText)){
-            Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getBaseContext(), "Login Success", Toast.LENGTH_SHORT).show();
             //Sửa file xml dataLogin
             if(cbRemember.isChecked()){
                 SharedPreferences.Editor editor = sharedPreferences.edit();

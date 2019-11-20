@@ -25,6 +25,15 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URISyntaxException;
+
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
+
 public class HomeActivity extends AppCompatActivity {
 
     int REQUEST_CODE_CAMERA = 123;
@@ -35,11 +44,22 @@ public class HomeActivity extends AppCompatActivity {
             tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon;
     ImageView imageViewProfile;
 
+    private Socket mSocket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        try {
+            mSocket = IO.socket("http://192.168.2.157:3000");
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        mSocket.connect();
+        mSocket.on("servernhantinnhan", onRetrieveData);
+        mSocket.emit("clientdata", "Laptrinh Android");
+//        mSocket.emit("client-sends", "Lap trinh Android");
 
         init();
 
@@ -166,6 +186,25 @@ public class HomeActivity extends AppCompatActivity {
         */
 
     }
+
+    private Emitter.Listener onRetrieveData = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject jsonObject = (JSONObject) args[0];
+                    try {
+                        String ten = jsonObject.getString("noidung");
+                        Toast.makeText(HomeActivity.this, ten, Toast.LENGTH_LONG).show();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+    };
+
 
     //Kiem tra ket qua nguoi dung cap quyen cho camera
     @Override
