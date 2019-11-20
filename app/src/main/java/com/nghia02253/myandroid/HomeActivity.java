@@ -149,7 +149,7 @@ public class HomeActivity extends AppCompatActivity {
         tvFragmentRespon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, FragmentResponActivity.class));
+                startActivity(new Intent(HomeActivity.this, KyhopActivity.class));
             }
         });
 

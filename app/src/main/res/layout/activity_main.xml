@@ -4,118 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="5dp"
-    android:weightSum="10"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_body">
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2">
-
-        <ImageView
-            android:id="@+id/imageLogo"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/logo_ecabinet" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="30dp"
-        android:paddingTop="10dp"
-        android:layout_gravity="clip_horizontal"
-        android:paddingRight="30dp"
-        android:layout_weight="7">
-
-        <EditText
-            android:id="@+id/userText"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:background="#00FFFFFF"
-            android:drawableLeft="@drawable/ic_input_user"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="Tài khoản"
-            android:inputType="textPersonName"
-            android:paddingBottom="10dp"
-            android:textColorHint="#fff"
-            android:textColor="#fff"
-            android:textSize="16dp" />
+            android:weightSum="10" android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
 
-        <EditText
-            android:id="@+id/passText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:background="#00FFFFFF"
-            android:drawableLeft="@drawable/ic_input_pass"
-            android:drawablePadding="10dp"
-            android:ems="10"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword"
-            android:paddingBottom="15dp"
-            android:textColorHint="#fff"
-            android:textColor="#fff"
-            android:textSize="16dp" />
-        <CheckBox
-            android:id="@+id/cbRemember"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:layout_marginLeft="23dp"
-            android:buttonTint="#fff"
-            android:text="Ghi nhớ đăng nhập" />
+                <ImageView
+                    android:id="@+id/imageLogo"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/logo_ecabinet" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:text="Đăng nhập"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_orange"
-            android:textColor="#fff"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:textSize="15dp"
-            android:onClick="onClickLogin"/>
-        <TextView
-            android:id="@+id/tvResetPass"
-            android:text="Quên mật khẩu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="15dp"
-            android:layout_marginTop="20dp"
-            android:clickable="true"/>
-
-    </LinearLayout>
+            </LinearLayout>
 
 
-    <TextView
-        android:text="Bạn chưa có tài khoản? Đăng ký"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="15dp" android:gravity="bottom"
-        android:paddingBottom="10dp"
-        android:layout_weight="1"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:layout_gravity="clip_horizontal"
+                android:paddingRight="30dp"
+                android:layout_weight="7">
 
+                <EditText
+                    android:id="@+id/userText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="#00FFFFFF"
+                    android:drawableLeft="@drawable/ic_input_user"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Tài khoản"
+                    android:inputType="textPersonName"
+                    android:paddingBottom="10dp"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/passText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="#00FFFFFF"
+                    android:drawableLeft="@drawable/ic_input_pass"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Mật khẩu"
+                    android:inputType="textPassword"
+                    android:paddingBottom="15dp"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"
+                    android:textSize="16dp" />
+                <CheckBox
+                    android:id="@+id/cbRemember"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:layout_marginLeft="23dp"
+                    android:buttonTint="#fff"
+                    android:text="Ghi nhớ đăng nhập" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:text="Đăng nhập"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_orange"
+                    android:textColor="#fff"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:textSize="15dp"
+                    android:onClick="onClickLogin"/>
+                <TextView
+                    android:id="@+id/tvResetPass"
+                    android:text="Quên mật khẩu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="15dp"
+                    android:layout_marginTop="20dp"
+                    android:clickable="true"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:text="Bạn chưa có tài khoản? Đăng ký"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="15dp" android:gravity="bottom"
+                android:paddingBottom="10dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

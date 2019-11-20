@@ -33,7 +33,7 @@ public class FragmentActivity extends AppCompatActivity implements DeleteDataInt
                 fragment = new Fragment_B();
                 break;
             case R.id.btnListFragment:
-                fragment = new FragmentKyhopList();
+                fragment = new FragmentList();
                 break;
             case R.id.btnDialogInterface:
                 fragment = new FragmentDialogInterface();

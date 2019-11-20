@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DatabaseActivity" android:label="SQlite Database"></activity>
+        <activity android:name=".KyhopDetailActivity"></activity>
+        <activity
+            android:name=".DatabaseActivity"
+            android:label="SQlite Database" />
         <activity android:name=".MediaAudioActivity" />
         <activity
             android:name=".VolleyObjectActivity"
@@ -35,7 +38,7 @@
         <activity android:name=".ListUser" />
         <activity
             android:name=".ListUserActivity"
-            android:label="Danh sách công việc"/>
+            android:label="Danh sách công việc" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -54,13 +57,13 @@
             android:label="Chi tiết tin" />
         <activity
             android:name=".FragmentActivity"
-            android:label="Fragment"/>
+            android:label="Fragment" />
         <activity
-            android:name=".FragmentResponActivity"
-            android:label="Fragment Giao diện"/>
+            android:name=".KyhopActivity"
+            android:label="Fragment Giao diện" />
         <activity
             android:name=".FragmentKyhopList"
-            android:label="Fragment kỳ họp"/>
+            android:label="Fragment kỳ họp" />
     </application>
 
 </manifest>
