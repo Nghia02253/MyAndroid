@@ -148,6 +148,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SQLite Database"/>
+            <TextView
+                android:id="@+id/tvChart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chart"/>
+            <TextView
+                android:id="@+id/tvYoutubeAPI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Youtube API"/>
             <Button
                 android:id="@+id/btnCamera"
                 android:layout_width="wrap_content"

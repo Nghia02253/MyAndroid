@@ -207,7 +207,7 @@ public class MediaAudioActivity extends AppCompatActivity {
     private void addMedia() {
         listMedia = new ArrayList<>();
         listMedia.add(new ListMedia("ring_tone", R.raw.ring_tone));
-        listMedia.add(new ListMedia("Người đến từ Triều Châu", R.raw.nguoi_den_tu_trieu_cha_quang_linh));
+        listMedia.add(new ListMedia("ring_tone 2", R.raw.ring_tone));
     }
 
     private void init() {

@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     Button test, hint, btnListUser, btnCamera;
     TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
             tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject,
-            tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon;
+            tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon, tvChart, tvYoutubeAPI;
     ImageView imageViewProfile;
 
     private Socket mSocket;
@@ -52,14 +52,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         try {
-            mSocket = IO.socket("http://192.168.2.157:3000");
+            mSocket = IO.socket("http://192.168.2.183:3000");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
         mSocket.connect();
         mSocket.on("servernhantinnhan", onRetrieveData);
         mSocket.emit("clientdata", "Laptrinh Android");
-//        mSocket.emit("client-sends", "Lap trinh Android");
 
         init();
 
@@ -172,7 +171,18 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(new Intent(HomeActivity.this, KyhopActivity.class));
             }
         });
-
+        tvChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ChatActivity.class));
+            }
+        });
+        tvYoutubeAPI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, YoutubeAPIActivity.class));
+            }
+        });
         /*
         tvCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -315,6 +325,8 @@ public class HomeActivity extends AppCompatActivity {
         tvSQLite                = findViewById(R.id.tvSQLite);
         tvFragment              = findViewById(R.id.tvFragment);
         tvFragmentRespon        = findViewById(R.id.tvFragmentRespon);
+        tvChart                 = findViewById(R.id.tvChart);
+        tvYoutubeAPI            = findViewById(R.id.tvYoutubeAPI);
         btnCamera               = findViewById(R.id.btnCamera);
         imageViewProfile        = findViewById(R.id.imageViewProfile);
         attachListener();
