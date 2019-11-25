@@ -33,7 +33,7 @@ public class ListUserActivity extends AppCompatActivity {
         arrayListUser = new ArrayList<>();
         adapter = new ListUserAdapter(this, R.layout.list_user_activity, arrayListUser);
         database = new Database(this, "ghichu.sqlite", null, 1);
-        //database.QueryData("CREATE TABLE IF NOT EXISTS ListUser(Id INTEGER PRIMARY KEY AUTOINCREMENT, CreatedDate DATE, Status VARCHAR(100), Title VARCHAR(500), Desc TEXT)");
+        database.QueryData("CREATE TABLE IF NOT EXISTS ListUser(Id INTEGER PRIMARY KEY AUTOINCREMENT, CreatedDate DATE, Status VARCHAR(100), Title VARCHAR(500), Desc TEXT)");
 
         //database.QueryData("INSERT INTO ListUser VALUES(null, datetime(), 'Sắp diễn ra', 'Hội nghị UBND tỉnh thường kỳ tháng 8/2019', 'Hội nghị UBND tỉnh thường kỳ tháng 8/2019' )");
         //database.QueryData("INSERT INTO ListUser VALUES(null, datetime(), 'Đã diễn ra', 'Hội nghị đánh giá tình hình thực hiện hệ thống chỉ tiêu\nthống kê cấp tỉnh và khảo sát xây dựng phần mềm', 'Chủ trì: Nguyễn Văn Linh - Chủ tịch UBND tỉnh\nĐịa điểm: Phòng họp số 1, tầng 2, Trụ sở Thường trực HĐND, UBN' )");
@@ -52,15 +52,18 @@ public class ListUserActivity extends AppCompatActivity {
     private void GetDataUser() {
         Cursor dataListUser = database.GetData("SELECT * FROM ListUser ORDER BY CreatedDate DESC");
         arrayListUser.clear();
-        while (dataListUser.moveToNext()) {
-            int idUser = dataListUser.getInt(0);
-            String Time = dataListUser.getString(1);
-            String Status = dataListUser.getString(2);
-            String Title = dataListUser.getString(3);
-            String Desc = dataListUser.getString(4);
+        if(dataListUser != null){
+            while (dataListUser.moveToNext()) {
+                int idUser = dataListUser.getInt(0);
+                String Time = dataListUser.getString(1);
+                String Status = dataListUser.getString(2);
+                String Title = dataListUser.getString(3);
+                String Desc = dataListUser.getString(4);
 
-            arrayListUser.add(new ListUser(Time, Status, Title, Desc, R.drawable.logo, idUser));
+                arrayListUser.add(new ListUser(Time, Status, Title, Desc, R.drawable.logo, idUser));
+            }
         }
+
         adapter.notifyDataSetChanged();
     }
     private void anhxa() {

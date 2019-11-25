@@ -44,7 +44,7 @@ public class ChatActivity extends AppCompatActivity {
         AnhXa();
 
         try {
-            mSocket = IO.socket("http://192.168.2.183:3000/");
+            mSocket = IO.socket("http://192.168.2.132:3000/");
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

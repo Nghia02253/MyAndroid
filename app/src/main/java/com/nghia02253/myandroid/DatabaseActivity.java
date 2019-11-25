@@ -27,9 +27,11 @@ public class DatabaseActivity extends AppCompatActivity {
         //database.QueryData("DELETE FROM CongViec WHERE Id = 3");
         //Get data
         Cursor dataCongViec = database.GetData("SELECT * FROM ListUser ORDER BY CreatedDate DESC");
-        while (dataCongViec.moveToNext()) {
-            String ten  = dataCongViec.getString(3);
-            tvGetData.append(ten + "\n");
+        if(dataCongViec != null) {
+            while (dataCongViec.moveToNext()) {
+                String ten = dataCongViec.getString(3);
+                tvGetData.append(ten + "\n");
+            }
         }
     }
 }

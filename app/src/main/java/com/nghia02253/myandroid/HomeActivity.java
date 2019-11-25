@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     Button test, hint, btnListUser, btnCamera;
     TextView tvUrlGoogle, tvSMS, tvCall, tvLoadImage, tvLoadContentInternet, tvLoadContentRSS,
             tvLoadJSON, tvLoadJSONLanguage, tvLoadJSONArrayObject, tvVolleyString, tvVolleyObject,
-            tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon, tvChart, tvYoutubeAPI;
+            tvMediaPlay, tvSQLite, tvFragment, tvFragmentRespon, tvChart, tvYoutubeAPI, tvYoutubeAPIList;
     ImageView imageViewProfile;
 
     private Socket mSocket;
@@ -181,6 +181,12 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, YoutubeAPIActivity.class));
+            }
+        });
+        tvYoutubeAPIList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, YoutubeAPIGetJSON.class));
             }
         });
         /*
@@ -327,6 +333,7 @@ public class HomeActivity extends AppCompatActivity {
         tvFragmentRespon        = findViewById(R.id.tvFragmentRespon);
         tvChart                 = findViewById(R.id.tvChart);
         tvYoutubeAPI            = findViewById(R.id.tvYoutubeAPI);
+        tvYoutubeAPIList        = findViewById(R.id.tvYoutubeAPIList);
         btnCamera               = findViewById(R.id.btnCamera);
         imageViewProfile        = findViewById(R.id.imageViewProfile);
         attachListener();
